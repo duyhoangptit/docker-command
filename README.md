@@ -1,4 +1,4 @@
-#Basic:
+#Docker begin:
 	https://viblo.asia/p/tim-hieu-co-ban-ve-docker-trong-vong-10-phut-jvElaw4dKkw
 	
 	https://viblo.asia/p/docker-from-the-beginning-part-i-Eb85oa74Z2G
@@ -204,3 +204,22 @@
 		
 	Kiểm tra xem trong docker có những mạng nào<br>
 		`docker network ls`
+		
+	Ánh xạ cổng x -> y: Khi thực hiện ánh xạ xong thì chúng ta có thể truy cập từ trình duyệt bên ngoài vào trong mạng container của docker<br>
+		`docker run -it --name [container_name] -p(Ánh xạ cổng) [cổng ánh xạ]:[cổng mặc định của container] [image_name]`
+		
+	Tạo ra các bản cầu mạng khác nhau, nếu không chỉ định loại network thì sẽ mặc định là bridge<br>
+		`docker network create --driver [loại network] [network_name]`
+		
+	Create container sử dụng network do mình tạo ra<br>
+		`docker run -it --name [container_name] --network [network_name] [image_name]`
+	Để cho một container connect tới một network<br>
+		`docker network connect [network_name] [container_name]`
+		
+7. Chạy Apache Httpd
+	
+	
+8. Chạy Mysql
+		`docker pull mysql`
+		
+		`docker run -it -rm -e param1=value1 param2=value 2 [image_name]`
